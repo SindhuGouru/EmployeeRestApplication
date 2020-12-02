@@ -16,5 +16,5 @@ public class EmployeeList {
         this.employeeList = employeeList;
     }
 
-    public List<Employee> employeeList;
+    private List<Employee> employeeList;
 }

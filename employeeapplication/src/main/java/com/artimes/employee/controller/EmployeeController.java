@@ -22,12 +22,10 @@ public class EmployeeController {
       return new ResponseEntity<>("Employee created successfully",HttpStatus.CREATED);
     }
 
-    @PostMapping("/createEmployeeList")
-    public ResponseEntity<String> createEmployeeList(@RequestBody EmployeeList employeeList){
-       for(int i=0;i<employeeList.getEmployeeList().size();i++) {
-           System.out.println(employeeList.getEmployeeList().get(i).getEmpId());
-           System.out.println(employeeList.getEmployeeList().get(i).getEmpName());
-           System.out.println(employeeList.getEmployeeList().get(i).getEmpSalary());
+    @PostMapping("/createEmployees")
+    public ResponseEntity<String> createEmployees(@RequestBody EmployeeList employeeList){
+       for(Employee e : employeeList.getEmployeeList()) {
+           System.out.println(e.toString());
        }
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

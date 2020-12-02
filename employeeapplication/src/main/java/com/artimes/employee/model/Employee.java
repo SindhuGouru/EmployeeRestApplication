@@ -28,4 +28,15 @@ public class Employee {
     public void setEmpSalary(int empSalary) {
         this.empSalary = empSalary;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId='" + empId + '\'' +
+                ", empName='" + empName + '\'' +
+                ", empSalary=" + empSalary +
+                '}';
+    }
+
+
 }
