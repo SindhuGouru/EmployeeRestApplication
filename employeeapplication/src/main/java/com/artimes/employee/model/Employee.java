@@ -1,9 +1,9 @@
 package com.artimes.employee.model;
 
 public class Employee {
-    public String empId;
-    public String empName;
-    public int empSalary;
+    private String empId;
+    private String empName;
+    private int empSalary;
 
     public String getEmpId() {
         return empId;
