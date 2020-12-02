@@ -1,17 +1,10 @@
 package com.artimes.employee.model;
 
 public class Employee {
-    public String empId;
-    public String empName;
-    public int empSalary;
 
-    public String getEmpId() {
-        return empId;
-    }
+    private String empName;
+    private int empSalary;
 
-    public void setEmpId(String empId) {
-        this.empId = empId;
-    }
 
     public String getEmpName() {
         return empName;
@@ -28,4 +21,14 @@ public class Employee {
     public void setEmpSalary(int empSalary) {
         this.empSalary = empSalary;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empName='" + empName + '\'' +
+                ", empSalary=" + empSalary +
+                '}';
+    }
+
+
 }
