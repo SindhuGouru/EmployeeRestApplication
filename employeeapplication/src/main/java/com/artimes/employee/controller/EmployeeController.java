@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeController {
 
-    @PostMapping("/employeeDetails")
+    @PostMapping("/createEmployee")
 //    @ResponseBody
-    public ResponseEntity<String> employeeDetails(@RequestBody Employee employee){
-        System.out.println("Employee Id : "+employee.getEmpId());
-        System.out.println("Employee Name : "+employee.getEmpName());
-        System.out.println("Employee Salary : "+employee.getEmpSalary());
-      return new ResponseEntity<>("Employee created with status 201",HttpStatus.CREATED);
+    public ResponseEntity<String> createEmployee(@RequestBody Employee employee){
+        System.out.println("Employee Id : " + employee.getEmpId());
+        System.out.println("Employee Name : " + employee.getEmpName());
+        System.out.println("Employee Salary : " + employee.getEmpSalary());
+      return new ResponseEntity<>("Employee created successfully",HttpStatus.CREATED);
     }
 
 }
