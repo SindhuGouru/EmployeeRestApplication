@@ -34,6 +34,11 @@ public class Employee implements Serializable {
         this.empSalary = empSalary;
     }
 
+    public Employee(String empName, String emailId, int empSalary) {
+        this.empName = empName;
+        this.emailId = emailId;
+        this.empSalary = empSalary;
+    }
 
     @Override
     public String toString() {
