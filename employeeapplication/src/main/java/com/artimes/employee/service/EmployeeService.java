@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -39,5 +40,13 @@ public class EmployeeService {
         }
 
        return emailIds;
+    }
+
+    public Optional<EmployeeDTO> getEmpById(Long empId){
+       return employeeRepository.findById(empId);
+    }
+
+    public List<EmployeeDTO> getEmpByIds(List<Long> empId) {
+        return employeeRepository.findByIds(empId);
     }
 }

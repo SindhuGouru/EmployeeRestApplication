@@ -1,14 +1,14 @@
 package com.artimes.employee.controller;
 
+import com.artimes.employee.model.EmployeeDTO;
 import com.artimes.employee.model.EmployeeList;
 import com.artimes.employee.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -29,6 +29,16 @@ public class EmployeeController {
             return new ResponseEntity<>("The following employee are already present in system : \n"+ emailIds, HttpStatus.CONFLICT);
         else
             return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/getEmployeeById/{id}")
+    public Optional<EmployeeDTO> getEmployeeById(@PathVariable(value="id") Long empId){
+        return employeeService.getEmpById(empId);
+    }
+
+    @GetMapping("/getEmployeeByIds/{id}")
+    public List<EmployeeDTO> getEmployeeByIds(@PathVariable(value="id") List<Long> empId){
+        return employeeService.getEmpByIds(empId);
     }
 
 }
