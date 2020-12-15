@@ -1,10 +1,21 @@
 package com.artimes.employee.model;
 
-public class Employee {
+import java.io.Serializable;
+
+
+public class Employee implements Serializable {
 
     private String empName;
+    private String emailId;
     private int empSalary;
 
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
 
     public String getEmpName() {
         return empName;
@@ -14,6 +25,7 @@ public class Employee {
         this.empName = empName;
     }
 
+
     public int getEmpSalary() {
         return empSalary;
     }
@@ -22,13 +34,13 @@ public class Employee {
         this.empSalary = empSalary;
     }
 
+
     @Override
     public String toString() {
         return "Employee{" +
                 "empName='" + empName + '\'' +
+                ", emailId='" + emailId + '\'' +
                 ", empSalary=" + empSalary +
                 '}';
     }
-
-
 }
